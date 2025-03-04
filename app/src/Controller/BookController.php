@@ -18,17 +18,14 @@ final class BookController extends AbstractController
     #[Route(name: 'app_book_index', methods: ['GET'])]
     public function index(BookRepository $bookRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        // Suppose you have a query for retrieving items
         $query = $bookRepository->createQueryBuilder('b')->getQuery();
 
-        // Paginate the results of the query
         $pagination = $paginator->paginate(
-            $query, /* query NOT result */
-            $request->query->getInt('page', 1), /*page number*/
-            10 /*limit per page*/
+            $query,
+            $request->query->getInt('page', 1),
+            10
         );
 
-        // Render the template
         return $this->render('book/index.html.twig', [
             'pagination' => $pagination,
         ]);
