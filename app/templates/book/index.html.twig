@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+    <h1>Book index</h1>
+
+    <a href="{{ path('app_book_new') }}" class="btn btn-secondary float-end">Create new</a>
+
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>PublishedAt</th>
+                <th>Description</th>
+                <th>Isbn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in pagination %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publishedAt ? book.publishedAt|date('Y-m-d') : '' }}</td>
+                <td>{{ book.description }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>
+                    <a href="{{ path('app_book_show', {'id': book.id}) }}">show</a>
+                    <a href="{{ path('app_book_edit', {'id': book.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation float-end">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}
