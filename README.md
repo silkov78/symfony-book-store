@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed:
 To run the project, navigate to the project directory and execute the following command:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 After the project has started, open your web browser and go to:
