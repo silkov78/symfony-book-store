@@ -8,6 +8,8 @@ until nc -z -v -w30 db 3306; do
   sleep 5
 done
 
+composer install
+
 php bin/console doctrine:migrations:migrate --no-interaction
 php bin/console doctrine:fixtures:load --no-interaction
 
