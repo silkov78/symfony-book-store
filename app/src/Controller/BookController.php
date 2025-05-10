@@ -18,7 +18,9 @@ final class BookController extends AbstractController
     #[Route(name: 'app_book_index', methods: ['GET'])]
     public function index(BookRepository $bookRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $query = $bookRepository->createQueryBuilder('b')->getQuery();
+        $query = $bookRepository->createQueryBuilder('b')
+            ->orderBy('b.id', 'ASC')
+            ->getQuery();
 
         $pagination = $paginator->paginate(
             $query,
