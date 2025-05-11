@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Book;
+use App\Entity\BookCategory;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -22,6 +24,12 @@ class BookType extends AbstractType
             ])
             ->add('description', TextareaType::class, [
                 'trim' => true,
+            ])
+            ->add('category', EntityType::class, [
+                'class' => BookCategory::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Choose a category',
+                'required' => false,
             ])
             ->add('isbn')
         ;
