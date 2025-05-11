@@ -45,8 +45,17 @@ And for me, it looked like that rows just disappeared, в то время как
 
 #### Writing the report
 If to learn symfony and resolve problems is cool and interesting, describe it is king of boring (
-**Spent time:** 1,5 hours to train english writing
+**Spent time:** summary 1,5 hours to train english writing
 
+## Result
+It was pretty interesting task for me. First of all, I was glad to see familiar technologies:
+1. Previously, I have experience with basics of Doctrine
+2. Twig is copy of Django template engine Jinja
+3. And of course, standard PHP-development tools and approaches
+
+But despite the above, it wasn't simple exercise without problems. 
+There were hours of prompting and reading docs. That's exactly why I feel satisfaction from completed work :) 
+**_I will be happy to discuss details!_**
 
 #### Music environment
 Dynamic electronic music is the best assistant :)
