@@ -38,7 +38,7 @@ class Book
     private ?string $isbn = null;
 
     #[ORM\ManyToOne(inversedBy: 'books')]
-    #[JoinColumn(name: 'category_id', referencedColumnName: 'id')]
+    #[JoinColumn(name: 'category_id', referencedColumnName: 'id', onDelete: 'RESTRICT')]
     private ?BookCategory $category = null;
 
     public function getId(): ?int
