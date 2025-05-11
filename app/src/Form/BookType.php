@@ -37,9 +37,7 @@ class BookType extends AbstractType
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event) {
             $data = $event->getData();
 
-            if (isset($data['description'])) {
-                $data['description'] = substr($data['description'], 0, 80);
-            }
+            // Redundant description validation is removed from form
 
             // Update the event with the modified data
             $event->setData($data);
