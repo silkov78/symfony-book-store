@@ -27,7 +27,7 @@
                 <td>{{ book.title }}</td>
                 <td>{{ book.author }}</td>
                 <td>{{ book.publishedAt ? book.publishedAt|date('Y-m-d') : '' }}</td>
-                <td>{{ book.description }}</td>
+                <td>{% include 'book/_book_list_description.html.twig' %}</td>
                 <td>{{ book.category ? book.category.name : '' }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>

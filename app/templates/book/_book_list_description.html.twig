@@ -1,0 +1,8 @@
+{% if book.description %}
+    {% if book.description|length > 150 %}
+        {% set trimed_text = book.description|slice(0, 150)|trim(' ,.:;-', 'right') %}
+        {{ trimed_text }}<a href="{{ path('app_book_show', {'id': book.id}) }}"> ...</a>
+    {% else %}
+        {{ book.description }}
+    {% endif%}
+{% endif%}
