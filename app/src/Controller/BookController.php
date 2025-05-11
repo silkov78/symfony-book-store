@@ -19,6 +19,8 @@ final class BookController extends AbstractController
     public function index(BookRepository $bookRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $query = $bookRepository->createQueryBuilder('b')
+            ->leftJoin('b.category', 'c')
+            ->addSelect('c')
             ->orderBy('b.id', 'ASC')
             ->getQuery();
 

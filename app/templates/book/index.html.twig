@@ -15,6 +15,7 @@
                 <th>Author</th>
                 <th>PublishedAt</th>
                 <th>Description</th>
+                <th>Category</th>
                 <th>Isbn</th>
                 <th>actions</th>
             </tr>
@@ -27,6 +28,7 @@
                 <td>{{ book.author }}</td>
                 <td>{{ book.publishedAt ? book.publishedAt|date('Y-m-d') : '' }}</td>
                 <td>{{ book.description }}</td>
+                <td>{{ book.category ? book.category.name : '' }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>
                     <a href="{{ path('app_book_show', {'id': book.id}) }}">show</a>
