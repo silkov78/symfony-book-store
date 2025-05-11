@@ -35,8 +35,8 @@ I decided the second option was the most suitable because:
 
 ### Approach to Implementing CRUD for BookCategory
 
-I was really happy to discover the `--crud` flag in the `make:controller` command.  
-It felt like magic to preview the generated code before starting the implementation :)
+I was really happy to discover the `--crud` flag in the `make:controller` command
+
 
 ## The Biggest Challenges
 
@@ -55,8 +55,7 @@ To me, it looked like the rows had just disappeared, **when in fact they were ju
 
 ### Writing the Report
 
-Learning Symfony and solving problems was cool and interesting,  
-**but describing it all felt kind of boring** 😅
+Learning Symfony and solving problems was cool and interesting, but describing it all felt kind of boring :)
 **Time spent:** Around 1.5 hours practicing English writing
 
 ## Result
@@ -68,7 +67,7 @@ I was glad to see some familiar technologies:
 2. Twig feels like a copy of Django’s Jinja template engine.
 3. And of course, standard PHP development tools and approaches.
 
-But despite that, it wasn’t a simple exercise without obstacles.  
+But despite that, it wasn’t a simple exercise without problems.  
 There were hours spent prompting and reading documentation.  
 That’s exactly why I feel satisfied with the completed work 😊
 
