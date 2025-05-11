@@ -71,6 +71,12 @@ final class BookCategoryController extends AbstractController
     #[Route('/{id}', name: 'app_book_category_delete', methods: ['POST'])]
     public function delete(Request $request, BookCategory $bookCategory, EntityManagerInterface $entityManager): Response
     {
+        // Check if the category has associated books
+        if ($bookCategory->getBooks()->count() > 0) {
+            $this->addFlash('error', 'Cannot delete category: It has associated books.');
+            return $this->redirectToRoute('app_book_category_index');
+        }
+
         if ($this->isCsrfTokenValid('delete'.$bookCategory->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($bookCategory);
             $entityManager->flush();
